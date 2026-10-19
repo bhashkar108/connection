@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — NexaCorp Business Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+
+  <!-- ═══════════════════ SPLIT SCREEN ═══════════════════ -->
+  <div class="auth-container">
+
+    <!-- LEFT — Brand Panel -->
+    <div class="brand-panel">
+      <div class="brand-panel__inner">
+
+        <!-- Logo -->
+        <div class="brand-logo">
+          <div class="brand-logo__icon">N</div>
+          <span class="brand-logo__name">NexaCorp</span>
+        </div>
+
+        <!-- Headline -->
+        <div class="brand-headline">
+          <h1>Welcome back to<br /><span class="brand-headline__accent">your workspace</span></h1>
+          <p>The all-in-one business platform trusted by thousands of companies worldwide.</p>
+        </div>
+
+        <!-- Live Stats Preview -->
+        <div class="brand-stats" id="brandStats">
+          <div class="brand-stat">
+            <span class="brand-stat__num" id="statUsers">—</span>
+            <span class="brand-stat__label">Registered Users</span>
+          </div>
+          <div class="brand-stat-divider"></div>
+          <div class="brand-stat">
+            <span class="brand-stat__num" id="statLogins">—</span>
+            <span class="brand-stat__label">Logins Today</span>
+          </div>
+          <div class="brand-stat-divider"></div>
+          <div class="brand-stat">
+            <span class="brand-stat__num" id="statCompanies">—</span>
+            <span class="brand-stat__label">Companies</span>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">🔒 256-bit SSL</div>
+          <div class="trust-badge">✅ GDPR Compliant</div>
+          <div class="trust-badge">⚡ 99.9% Uptime</div>
+        </div>
+
+      </div>
+
+      <!-- Decorative circles -->
+      <div class="deco-circle deco-circle--1"></div>
+      <div class="deco-circle deco-circle--2"></div>
+      <div class="deco-circle deco-circle--3"></div>
+    </div>
+
+    <!-- RIGHT — Login Form -->
+    <div class="form-panel">
+      <div class="form-panel__inner">
+
+        <!-- Mobile Logo (hidden on desktop) -->
+        <div class="mobile-logo">
+          <div class="brand-logo__icon brand-logo__icon--sm">N</div>
+          <span>NexaCorp</span>
+        </div>
+
+        <div class="form-header">
+          <h2>Sign in to your account</h2>
+          <p>Don't have an account? <a href="signup.html" class="form-link">Create one free →</a></p>
+        </div>
+
+        <!-- Alert Box -->
+        <div class="alert hidden" id="alertBox">
+          <span class="alert__icon"></span>
+          <span id="alertMsg"></span>
+        </div>
+
+        <form class="auth-form" id="loginForm" novalidate>
+
+          <div class="field-group">
+            <label class="field-label" for="email">Work Email</label>
+            <div class="field-wrap">
+              <span class="field-icon">✉</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="field-input"
+                placeholder="you@company.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <span class="field-error hidden" id="emailErr">Enter a valid email address.</span>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="password">
+              Password
+              <a href="#" class="field-label__link">Forgot password?</a>
+            </label>
+            <div class="field-wrap">
+              <span class="field-icon">🔑</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="field-input"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+              <button type="button" class="toggle-pw" id="togglePw" aria-label="Show/hide password">
+                <span id="eyeIcon">👁</span>
+              </button>
+            </div>
+            <span class="field-error hidden" id="pwErr">Password is required.</span>
+          </div>
+
+          <div class="field-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMe" />
+              <span class="checkbox-custom"></span>
+              Remember me for 30 days
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="btnText">Sign In</span>
+            <span class="btn-loader hidden" id="btnLoader"></span>
+          </button>
+
+        </form>
+
+        <div class="form-footer">
+          <a href="stats.html" class="stats-link">📊 View platform statistics →</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- end .auth-container -->
+
+  <script src="js/login.js"></script>
+</body>
+</html>

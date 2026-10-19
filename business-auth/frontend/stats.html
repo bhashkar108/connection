@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform Statistics — NexaCorp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="stats-body">
+
+  <!-- Navbar -->
+  <nav class="stats-nav">
+    <a href="login.html" class="brand-logo brand-logo--nav">
+      <div class="brand-logo__icon brand-logo__icon--sm">N</div>
+      <span class="brand-logo__name">NexaCorp</span>
+    </a>
+    <div class="stats-nav__actions">
+      <a href="login.html" class="btn-nav">Sign In</a>
+      <a href="signup.html" class="btn-nav btn-nav--primary">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="stats-hero">
+    <div class="stats-hero__badge">📊 Live Platform Statistics</div>
+    <h1 class="stats-hero__title">Real-time Growth Numbers</h1>
+    <p class="stats-hero__sub">Updated live · Refreshes every 30 seconds</p>
+    <div class="live-dot-wrap">
+      <span class="live-dot"></span>
+      <span class="live-text">LIVE</span>
+    </div>
+  </section>
+
+  <!-- Main Stats Cards -->
+  <section class="stats-section">
+    <div class="stats-grid">
+
+      <div class="stat-card stat-card--blue">
+        <div class="stat-card__icon">👥</div>
+        <div class="stat-card__num" id="totalUsers">
+          <span class="counter" data-target="0">—</span>
+        </div>
+        <div class="stat-card__label">Total Registered Users</div>
+        <div class="stat-card__sub">All time signups</div>
+      </div>
+
+      <div class="stat-card stat-card--gold">
+        <div class="stat-card__icon">🔐</div>
+        <div class="stat-card__num" id="loginsToday">
+          <span class="counter" data-target="0">—</span>
+        </div>
+        <div class="stat-card__label">Logins Today</div>
+        <div class="stat-card__sub">Active sessions this 24h</div>
+      </div>
+
+      <div class="stat-card stat-card--green">
+        <div class="stat-card__icon">🏢</div>
+        <div class="stat-card__num" id="totalCompanies">
+          <span class="counter" data-target="0">—</span>
+        </div>
+        <div class="stat-card__label">Companies Onboarded</div>
+        <div class="stat-card__sub">Active business accounts</div>
+      </div>
+
+      <div class="stat-card stat-card--purple">
+        <div class="stat-card__icon">⚡</div>
+        <div class="stat-card__num" id="loginsTotal">
+          <span class="counter" data-target="0">—</span>
+        </div>
+        <div class="stat-card__label">Total Logins (All Time)</div>
+        <div class="stat-card__sub">Cumulative login count</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Recent Signups Table -->
+  <section class="stats-section">
+    <div class="table-card">
+      <div class="table-card__header">
+        <h3 class="table-card__title">🕒 Recent Sign Ups</h3>
+        <span class="table-card__badge">Last 10 registrations</span>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="recentTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Joined</th>
+            </tr>
+          </thead>
+          <tbody id="recentBody">
+            <tr><td colspan="4" class="table-loading">Loading data…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Growth Bar Chart (visual) -->
+  <section class="stats-section">
+    <div class="table-card">
+      <div class="table-card__header">
+        <h3 class="table-card__title">📈 Signup Trend (Last 7 Days)</h3>
+      </div>
+      <div class="bar-chart" id="barChart">
+        <div class="bar-chart__loading">Loading chart…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="stats-cta">
+    <h2>Ready to join the community?</h2>
+    <p>Create your free account in under 60 seconds.</p>
+    <a href="signup.html" class="btn-cta">Get Started Free →</a>
+  </section>
+
+  <script src="js/stats.js"></script>
+</body>
+</html>

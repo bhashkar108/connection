@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — NexaCorp Business Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+
+  <div class="auth-container">
+
+    <!-- LEFT — Brand Panel -->
+    <div class="brand-panel brand-panel--signup">
+      <div class="brand-panel__inner">
+
+        <div class="brand-logo">
+          <div class="brand-logo__icon">N</div>
+          <span class="brand-logo__name">NexaCorp</span>
+        </div>
+
+        <div class="brand-headline">
+          <h1>Start your<br /><span class="brand-headline__accent">business journey</span></h1>
+          <p>Join thousands of businesses already scaling with NexaCorp. Free to start, powerful to grow.</p>
+        </div>
+
+        <!-- Feature list -->
+        <ul class="feature-list">
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Unlimited team members on free plan</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Real-time analytics dashboard</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>Priority customer support 24/7</span>
+          </li>
+          <li class="feature-item">
+            <span class="feature-check">✓</span>
+            <span>No credit card required</span>
+          </li>
+        </ul>
+
+        <!-- Live counter -->
+        <div class="join-counter">
+          <div class="join-counter__pulse"></div>
+          <span id="joinCounterText">Loading…</span>
+        </div>
+
+      </div>
+
+      <div class="deco-circle deco-circle--1"></div>
+      <div class="deco-circle deco-circle--2"></div>
+      <div class="deco-circle deco-circle--3"></div>
+    </div>
+
+    <!-- RIGHT — Signup Form -->
+    <div class="form-panel">
+      <div class="form-panel__inner form-panel__inner--wide">
+
+        <div class="mobile-logo">
+          <div class="brand-logo__icon brand-logo__icon--sm">N</div>
+          <span>NexaCorp</span>
+        </div>
+
+        <div class="form-header">
+          <h2>Create your free account</h2>
+          <p>Already have an account? <a href="login.html" class="form-link">Sign in →</a></p>
+        </div>
+
+        <!-- Alert -->
+        <div class="alert hidden" id="alertBox">
+          <span class="alert__icon"></span>
+          <span id="alertMsg"></span>
+        </div>
+
+        <form class="auth-form" id="signupForm" novalidate>
+
+          <!-- Full Name + Company (two columns) -->
+          <div class="field-row-2">
+            <div class="field-group">
+              <label class="field-label" for="fullName">Full Name</label>
+              <div class="field-wrap">
+                <span class="field-icon">👤</span>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="field-input"
+                  placeholder="John Smith"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <span class="field-error hidden" id="nameErr">Full name is required.</span>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label" for="company">Company Name</label>
+              <div class="field-wrap">
+                <span class="field-icon">🏢</span>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="field-input"
+                  placeholder="Acme Corp"
+                  autocomplete="organization"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="email">Work Email</label>
+            <div class="field-wrap">
+              <span class="field-icon">✉</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="field-input"
+                placeholder="you@company.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <span class="field-error hidden" id="emailErr">Enter a valid email address.</span>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="password">Password</label>
+            <div class="field-wrap">
+              <span class="field-icon">🔑</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="field-input"
+                placeholder="Min 8 characters"
+                autocomplete="new-password"
+                required
+              />
+              <button type="button" class="toggle-pw" id="togglePw">
+                <span id="eyeIcon">👁</span>
+              </button>
+            </div>
+            <!-- Password strength bar -->
+            <div class="pw-strength" id="pwStrength">
+              <div class="pw-strength__bar" id="pwBar"></div>
+            </div>
+            <span class="pw-strength__label" id="pwLabel"></span>
+            <span class="field-error hidden" id="pwErr">Password must be at least 8 characters.</span>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="confirmPw">Confirm Password</label>
+            <div class="field-wrap">
+              <span class="field-icon">🔒</span>
+              <input
+                type="password"
+                id="confirmPw"
+                name="confirmPw"
+                class="field-input"
+                placeholder="Repeat password"
+                autocomplete="new-password"
+                required
+              />
+            </div>
+            <span class="field-error hidden" id="confirmErr">Passwords do not match.</span>
+          </div>
+
+          <div class="field-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="agreeTerms" required />
+              <span class="checkbox-custom"></span>
+              I agree to the <a href="#" class="form-link">Terms of Service</a> and <a href="#" class="form-link">Privacy Policy</a>
+            </label>
+          </div>
+          <span class="field-error hidden" id="termsErr">You must agree to the terms.</span>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span id="btnText">Create Account</span>
+            <span class="btn-loader hidden" id="btnLoader"></span>
+          </button>
+
+        </form>
+
+        <div class="form-footer">
+          <a href="stats.html" class="stats-link">📊 View platform statistics →</a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/signup.js"></script>
+</body>
+</html>
